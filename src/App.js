@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react'
+require('dotenv').config();
 const api = {
-  key: "d0abb125c9a030c9aac4a7db57fec36c",
-  base: "https://api.openweathermap.org/data/2.5/"
+  key: process.env.REACT_APP_API_KEY,
+  base: process.env.REACT_APP_BASE_URL
 }
+console.log(api.key)
+
 
 const App = () => {
   const [search, setSearch] = useState('');
