@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 const api = {
   key: "d0abb125c9a030c9aac4a7db57fec36c",
   base: "https://api.openweathermap.org/data/2.5/"
@@ -15,10 +15,18 @@ const App = () => {
       .then(result => {
         setWeather(result);
         setSearch("");
-        console.log(result)
       })
     }
   }
+
+  useEffect(() => {
+    fetch(`${api.base}weather?q=Bursa&units=metric&APPID=${api.key}`)
+    .then(res => res.json())
+      .then(result => {
+        setWeather(result);
+        setSearch("");
+      })
+  }, [])
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -66,4 +74,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
