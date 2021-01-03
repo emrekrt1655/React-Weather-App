@@ -12,7 +12,7 @@ body {
   background-image: url("./assets/Lonely_Mountain_-_DoS.jpg");
   background-size: cover;
   background-position: bottom;
-  transition: 0.4 ease-out;
+  transition: 0.4 ease;
 }
 .app.warm {
 background-image: url("./assets/spring-mountain-1455167104n8gk4.png");
